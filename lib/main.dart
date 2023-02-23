@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:demo_vs/src/routes/route.dart';
 
@@ -14,6 +15,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DEMO',
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en'), // English
+        Locale('es'), // Spanish
+      ],
       //home: HomePage(),
       initialRoute: '/',
       routes: getApplicationRoute(),
